@@ -10,11 +10,13 @@
 	.eqv READ_STRING  8
 	.eqv PRINT_CHAR   11
 	.eqv READ_CHAR    12
-	
 	.eqv EXIT         10
+	
+	#-- Valores para elegir el display
 	.eqv DISPLAY_DER 0
 	.eqv DISPLAY_IZQ 1
-	
+	#-- Valor maximo para los digitos en el display
+	.eqv MAX 9 
 	#--- Direccion base del display: 0xFFFF0010 
 	.eqv BASE 0xFFFF0010
 	
