@@ -21,17 +21,17 @@
 	.eqv BASE 0xFFFF0010
 	
 	#-- Valores a sacar por los displays en hexadecimal (0 - 9)
-	.eqv UNO 0x06
-	.eqv DOS 0x5B
-	.eqv TRES 0X4F
-	.eqv CUATRO 0X66
-	.eqv CINCO 0X6D
-	.eqv SEIS 0X7C
-	.eqv SIETE 0X07
-	.eqv OCHO 0X7F
-	.eqv NUEVE 0X67
-	.eqv CERO 0X3F
-	.eqv PUNTO 0X80
-	
+numeros:	.eqv UNO 0x06
+		.eqv DOS 0x5B
+		.eqv TRES 0X4F
+		.eqv CUATRO 0X66
+		.eqv CINCO 0X6D
+		.eqv SEIS 0X7C
+		.eqv SIETE 0X07
+		.eqv OCHO 0X7F
+		.eqv NUEVE 0X67
+		.eqv CERO 0X3F
+		.eqv PUNTO 0X80
+		
 	#-- Si se necesita existe la posibilidad de hacer un LAMP test con este valor
 	.eqv LAMP 0XFF
