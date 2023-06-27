@@ -1,7 +1,7 @@
 #-- DigitalLabSim
 
-	#-- Fichero con los codigos de los servicios del Sistema operativo
-	.globl fin
+	#-- Fichero codigo principal
+	.globl fin, finf
 	.include "servicios.asm"
 	
 	.data
@@ -50,17 +50,18 @@ inicio:
 	#-- Se traduce a una subrutina
 	#-- Segun el valor que contenga a0, usaremos una funcion u otra(subrutina)
 	
+	#-- Funcion contador del 0 al 99, display de segmentos
 	beq a0,s1,contador
+	#-- Funcion cuenta atras del 99 al 0, display de segmentos
 	beq a0,s2, cuentatras
 	
 	#-- Si el usuario introduce un valor fuera del rango de funciones disponibles
 	#-- Se tratara como error y se terminara el programa
 	beqz a0, errores
 	bgt a0, s2, errores
-		
+finf:
 	b fin
 		
-
 errores:
 
 	#-- Se imprime un mensaje de error por la consola
