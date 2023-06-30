@@ -10,13 +10,35 @@ Funciones para el manejo del Digital Lab Sim del Rars
 - Contador decimal(0.0-9.9)
 - Cuenta atras decimal(9.9-0.0)
 - Dado electronico (1-6)
-- Random num generador (0-99)
-- Random num generador decimal (0.0-9.9)
 
 ## Funciones teclado hexadecimal
 
 - Lectura de teclas individuales
 - Lectura de numeros decimales y hexadecimales(2 digitos)
+
+## Contador
+
+La función contador trabaja con los displays de segmentos, alojados en la direccion 0xFFFF0010 y 0xFFFF0011, derecho e iqzuierdo respectivamente.
+Al iniciar el programa, eligiendo la funcion 1 en el menú de opciones y con el display de segmentos conectado, los dos displays iran actualizando los valores que muestran con respecto a un orden.
+Debido a la cantidad de displays de segmentos disponibles, solo podemos contar desde el 00 al 99.
+
+-REGISTROS NO AJUSTADOS AL CONVENIO ( No terminado)
+
+## Cuenta atras
+
+No terminado
+
+## Contador decimal
+
+No terminado
+
+## Cuenta atras decimal
+
+No terminado
+
+## Lectura de teclado hexadecimal y display del numero tecleado
+
+No terminado
 
 
 ## Autores

@@ -34,7 +34,7 @@ num2:	.byte 0x06 #-- Valor de 1 en Displays (1), puntero izq.
 	.byte 0x7C #-- Valor de 6 en Displays (6)
 	.byte 0x07 #-- Valor de 7 en Displays (7)
 	.byte 0x7F #-- Valor de 8 en Displays (8)
-	.byte 0X67 #-- Valor de 9 en Displays (9)
+num3:	.byte 0X67 #-- Valor de 9 en Displays (9)
 	
 extrad:	.byte 0X80 #-- Valor del punto en Displays (10)
 	.byte 0xFF #-- Valore para LAMP TEST en DISPLAYS (11)
