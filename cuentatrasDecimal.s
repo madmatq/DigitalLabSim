@@ -1,19 +1,25 @@
 #-- Fichero con la subrutina de cuenta atras
 
-	.globl cuentatras
+	.globl cuentatrasDec
 	.include "servicios.asm"
 
 	.text
 
-cuentatras: 
+cuentatrasDec: 
 	#-- Cuenta atras de 99 a 0
 	#-- Uso de los segmentos de DERECHA A IZQUIERDA
 	#-- Cargamos en t0 la ultima direccion en memoria de los digitos, puntero der.
 	la t0, num2
 	#-- Cargamos en t1 la ultima direccion en memoria de los digitos, puntero izq.
 	la t1, num2
-	#-- Cargamos el valor a sacar por el Display Izquierdo, temporal
+	#-- Cargar el valor a sacar por el Display Izquierdo, temporal
 	lb t2, 0(t0)	
+	
+	#-- Para añadir el punto en el display habria que encender el segmento 7.
+	#-- Añadiriamos un 1 en el bit de mayor peso = 110110111 (ejemplo del digito 2),
+	#-- lo cual se traduce en sumar 10 millones (que en decimal seria sumar 128 y en hexadecimal 80).
+	addi t2,t2, PUNTO
+	
 	sb t2, DISPLAY_IZQ(s0)
 	
 	#-- Iniciamos los contadores
@@ -69,6 +75,8 @@ resta2:
 	addi t1,t1,-1
 	#-- Actualizo el valor del display izquierdo
 	lb t4, 0(t1)
+	#-- Añadimos el punto
+	addi t4,t4, PUNTO
 	sb t4, DISPLAY_IZQ(s0)
 	#-- Resto 1 al contador del display izq
 	addi t3,t3, -1

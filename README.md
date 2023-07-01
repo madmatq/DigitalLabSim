@@ -19,14 +19,15 @@ Funciones para el manejo del Digital Lab Sim del Rars
 ## Contador
 
 La función contador trabaja con los displays de segmentos, alojados en la direccion 0xFFFF0010 y 0xFFFF0011, derecho e iqzuierdo respectivamente.
-Al iniciar el programa, eligiendo la funcion 1 en el menú de opciones y con el display de segmentos conectado, los dos displays iran actualizando los valores que muestran con respecto a un orden.
+Al iniciar el programa, eligiendo la funcion 1 en el menú de opciones y con el display de segmentos conectado, los dos displays iran actualizando los valores que muestran con respecto a un orden ascendente.
 Debido a la cantidad de displays de segmentos disponibles, solo podemos contar desde el 00 al 99.
-
--REGISTROS NO AJUSTADOS AL CONVENIO ( No terminado)
 
 ## Cuenta atras
 
-No terminado
+La funcion cuenta atras trabaja con los displays de segmentos, alojados en las direcciones 0xFFFF0010 y 0xFFFF0011, derecha e izquierda respectivamente.
+Al iniciar el programa, eligiendo la funcion 2 en el menu de opciones y con el display de segmentos conectado, los dos displays iran actualizando los valores que muestran con respecto a un orden descendente.
+Debido a la cantidad de displays de segmentos disponibles, solo podemos contar desde el 99 al 00.
+
 
 ## Contador decimal
 
@@ -39,6 +40,12 @@ No terminado
 ## Lectura de teclado hexadecimal y display del numero tecleado
 
 No terminado
+
+## Dado electronico (?)
+
+Es esto posible?
+
+Esa era la pregunta y tras una exhaustiva busqueda, dimos con una 'respuesta'. 
 
 
 ## Autores
