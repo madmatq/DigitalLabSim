@@ -11,7 +11,9 @@ mg2:	.string "\n [1] : Contador(0-99)  "
 mg3:	.string "\n [2] : Cuenta atras(99-0)  "
 mg4:	.string "\n [3] : Contador decimal(0.0-9.9) "
 mg5:	.string "\n [4] : Cuenta atras decimal (9.9-0.0) "
-mg6:	.string "\n ERROR: caracter no valido "
+mg6:	.string "\n [5] : Dado [1-6] "
+mg7:	.string "\n [6] : Teclado hexadecimal "
+mg8:	.string "\n ERROR: caracter no valido "
 salto:	.string "\n"
 	
 	.text
@@ -25,6 +27,8 @@ salto:	.string "\n"
 	li s2, 2 #-- Cuenta atras(99-0)
 	li s3, 3 #-- Contador decimal(0.0-9.9)
 	li s4, 4 #-- Cuenta atras decimal(9.9-0.0)
+	li s5, 5 #-- Dado (1-6)
+	li s6, 6 #-- Lectura de teclado hexadecimal
 	
 	#-- Comienza el programa
 	b inicio
@@ -44,6 +48,12 @@ inicio:
 	li a7, PRINT_STRING
 	ecall
 	la a0, mg5
+	li a7, PRINT_STRING
+	ecall
+	la a0, mg6
+	li a7, PRINT_STRING
+	ecall
+	la a0, mg7 
 	li a7, PRINT_STRING
 	ecall
 	
@@ -68,11 +78,15 @@ inicio:
 	beq a0,s3, contadorDec
 	#-- Funcion cuenta atras decimal del 9.9 al 0.0, display de segmentos
 	beq a0,s4, cuentatrasDec
+	#-- Funcion dado, generador de numero aleatorio del 1 al 6 y display del mismo
+	beq a0,s5, numero1
+	#-- Funcion teclado hexadecimal
+	beq a0,s6, teclado
 	
 	#-- Si el usuario introduce un valor fuera del rango de funciones disponibles
 	#-- Se tratara como error y se terminara el programa
 	beqz a0, errores
-	bgt a0, s4, errores
+	bgt a0, s6, errores
 	
 		
 errores:

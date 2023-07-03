@@ -8,10 +8,11 @@
 	.eqv READ_INT     5
 	.eqv PRINT_STRING 4
 	.eqv READ_STRING  8
-	.eqv PRINT_CHAR   11
-	.eqv READ_CHAR    12
+	.eqv RAND_INT	  42	#-- Servicio que provee un entero aleatorio en rango preestablecido
 	.eqv EXIT         10
 	.eqv PUNTO	  128
+	.eqv MAX1    6	#-- Rango maximo del dado 1, sumamos +1 ya que el limite inferior es siempre 0
+	.eqv MAX2    99	#-- Rango maximo del dado 2, sumamos +1 ya que el limite inferior es siempre 0
 	
 	#--- Direccion base del display: 0xFFFF0010 
 	.eqv BASE 0xFFFF0010
