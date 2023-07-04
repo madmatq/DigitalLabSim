@@ -5,11 +5,11 @@ Funciones para el manejo del Digital Lab Sim del Rars
 
 ## Funciones display
 
-- [Contador(0-99)](#Contador(0-99))
-- [Cuenta atras(99-0)](#Cuenta_atras(99-0))
-- [Contador decimal(0.0-9.9)](#Contador_decimal(0.0-9.9))
-- [Cuenta atras decimal(9.9-0.0)](#Cuenta_atras_decimal(9.9-0.0))
-- [Dado electronico (1-6)](#Dado(1-6))
+- [Contador(0-99)](#Contador))
+- [Cuenta atras(99-0)](#Cuenta_atras)
+- [Contador decimal(0.0-9.9)](#Contador_decimal)
+- [Cuenta atras decimal(9.9-0.0)](#Cuenta_atras_decimal)
+- [Dado electronico (1-6)](#Dado)
 
 ## Funciones teclado hexadecimal
 
@@ -40,6 +40,11 @@ añadiriamos un 1 en el bit de mayor peso = 110110111,
 lo cual se traduce en sumar 10 millones (que en decimal seria sumar 128 y en hexadecimal 80). 
 Por lo tanto solo se trata de sumar 128 al valor en decimal (91+128=219 a hexadecimal: 0xDB).	
 
+Estudio de los displays de segmentos, tabla utilizada en todas las funciones
+
+![qwdqwom](https://github.com/madmatq/DigitalLabSim/assets/136661637/908c638e-7f3d-4ed1-8e38-43e9ca3a4132)
+
+
 ## Cuenta_atras_decimal
 
 La funcion cuenta atras trabaja con los displays de segmentos, alojados en las direcciones 0xFFFF0010 y 0xFFFF0011, derecha e izquierda respectivamente.
@@ -56,6 +61,7 @@ Por lo tanto solo se trata de sumar 128 al valor en decimal (91+128=219 a hexade
 ## Lectura_teclado_hexadecimal
 
 Programa estudiado pero no terminado.
+
 ![foto](https://github.com/madmatq/DigitalLabSim/assets/136661637/5467b371-3432-4a2d-bfef-d60d6033dfcd)
 
 
@@ -67,8 +73,13 @@ Esa era la pregunta y tras una exhaustiva busqueda, dimos con una 'respuesta'.
 
 Tras estudiar la posibilidad de añadir una funcion que pudiese generar numeros 'pseudoaleatorios', encontramos la llamada al sistema 42 (Get a random bounded integer),
 a la cual se le puede pasar como argumento el limite superior al que se debe adecuar, dandonos asi un numero 'aleatorio' dentro de nuestro rango.
-![foto](https://github.com/madmatq/DigitalLabSim/assets/136661637/10f0fd17-34ae-4023-ac99-9e9c648b964b)
 
+## Dado de 99 caras (en pruebas)
+
+En el fichero 'randomDisplay.s' queremos generar un numero aleatorio para luego su posterior muestra en el display de segmentos.
+En este caso, al igual que en otras funciones, reutilizamos la estructura del programa Contador/Dado.
+Este programa no esta optimizado ya que toma mucho tiempo llegar hasta los valores mas altos (98,99...).
+SIN TERMINAR.
 
 ## Autores
 
@@ -80,5 +91,6 @@ a la cual se le puede pasar como argumento el limite superior al que se debe ade
  - [2019-20-LAB-AO. L4: Pract 2-1.](https://github.com/myTeachingURJC/2019-20-LAB-AO/wiki/L4:-Practica-2)
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [RARS -- RISC-V Assembler and Runtime Simulator](https://github.com/TheThirdOne/rars)
+ - [RISC-V True Random Number Generation: Probably Too Important to be Le... - Markku-Juhani O. Saarinen](https://www.youtube.com/watch?v=kggg3M0v1WA)
 
 
